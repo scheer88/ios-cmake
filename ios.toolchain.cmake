@@ -1,4 +1,6 @@
 # This file is part of the ios-cmake project. It was retrieved from
+# https://github.com/scheer88/ios-cmake.git, which is a fork of
+# https://github.com/leetal/ios-cmake.git, which is a fork of
 # https://github.com/cristeab/ios-cmake.git, which is a fork of
 # https://code.google.com/p/ios-cmake/. Which in turn is based off of
 # the Platform/Darwin.cmake and Platform/UnixPaths.cmake files which
@@ -40,11 +42,12 @@
 # It has been altered for iOS development.
 #
 # Updated by Alex Stewart (alexs.mac@gmail.com)
+# Updated by Alexander Widerberg (widerbergaren [at] gmail.com)
 #
 # *****************************************************************************
-#      Now maintained by Alexander Widerberg (widerbergaren [at] gmail.com)
+#      Now maintained by Jonas Scheer (dev [at] jscheer.de)
 #                      under the BSD-3-Clause license
-#                   https://github.com/leetal/ios-cmake
+#                   https://github.com/scheer88/ios-cmake
 # *****************************************************************************
 #
 #                           INFORMATION / HELP
@@ -341,7 +344,9 @@ endif()
 if(USED_CMAKE_GENERATOR MATCHES "Xcode")
   set(CMAKE_OSX_SYSROOT "${SDK_NAME}" CACHE INTERNAL "")
   if(NOT DEFINED CMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM)
-    set(CMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM "123456789A" CACHE INTERNAL "")
+    #set(CMAKE_XCODE_ATTRIBUTE_DEVELOPMENT_TEAM "X3S4ZGR6P6" CACHE INTERNAL "")
+    set(CMAKE_XCODE_ATTRIBUTE_CODE_SIGNING_REQUIRED "NO")
+    set(CMAKE_XCODE_ATTRIBUTE_CODE_SIGN_IDENTITY "")
   endif()
 endif()
 
